@@ -22,10 +22,10 @@ When viewing `index.php` you'll see a table of hashtags, with their counts. From
 * Help with some of the TODOs below ⬇️
 
 ## TODO
-* Max the selection out at 30
+* Max the selection out at 30 hashtags
 * Better way to build the hashtags file (database? faster calls? API? cron job to hit hashtag-list.php?)
 * Deploy somewhere
 * Split out CSS & JS files from index.php
 * Build process?
 * Loading indicator in `hashtags.php`?
-* Maybe call `hashtags.php` and have some sort of logic in `index.php` to send the hashtag request with some `$_GET["age"]` and `$_POST[]` business
+* Maybe call `hashtags.php` and have some sort of logic in `index.php` to send the hashtag request with some `$_GET[]` and `$_POST[]` business
