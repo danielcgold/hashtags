@@ -5,7 +5,6 @@
   $hashtag_count = count($hashtaglist);
   echo('Added ' . $hashtag_count . ' hashtags');
 
-  $keep_track = 1;
   foreach($hashtaglist as $item) {
     array_push($hashtags, array($item, search_between('<meta content="', ' Posts', hashtag($item))));
   }
