@@ -1,2 +1,2 @@
 #!/bin/bash
-php src/index.php > index.html
+php src/index.php > build/index.html
