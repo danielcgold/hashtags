@@ -9,6 +9,9 @@ This takes an array of user generated hashtags (`hashtag-list.php`) and grabs th
 
 When viewing `index.php` you'll see a table of hashtags, with their counts. From there, you can select hashtags and copy them to your clipboard.
 
+## Demo
+https://baker-lightning-32664.netlify.com/
+
 ## Getting started
 * Run this on an apache server
 * Hit http://localhost/hashtags.php to compile the hashtags compiled file
@@ -24,8 +27,8 @@ When viewing `index.php` you'll see a table of hashtags, with their counts. From
 ## TODO
 * Max the selection out at 30 hashtags
 * Better way to build the hashtags file (database? faster calls? API? cron job to hit hashtag-list.php?)
-* Deploy somewhere
+* ~~Deploy somewhere~~
 * Split out CSS & JS files from index.php
-* Build process?
+* ~~Build process?~~
 * Loading indicator in `hashtags.php`?
 * Maybe call `hashtags.php` and have some sort of logic in `index.php` to send the hashtag request with some `$_GET[]` and `$_POST[]` business
