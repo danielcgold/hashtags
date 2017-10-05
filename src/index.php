@@ -1,5 +1,7 @@
+<!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width">
   <title>Hashtag counts</title>
 
   <style>
@@ -13,19 +15,40 @@
       display: none;
     }
 
-    .content-wrapper {
-      display: flex;
+    @media (min-width: 760px) {
+      .content-wrapper {
+        display: flex;
+      }
     }
 
     .table-wrapper {
-      height: 100vh;
-      width: 50%;
+      height: 50vh;
+      width: 100%;
       overflow-y: scroll;
+    }
+
+    @media (min-width: 760px) {
+      .table-wrapper {
+        height: 100vh;
+        width: 50%;
+      }
     }
 
     .table {
       width: 100%;
       border-collapse: collapse;
+    }
+
+    .table tr th:first-child,
+    .table tr td:first-child {
+      display: none;
+    }
+
+    @media (min-width: 760px) {
+      .table tr th:first-child,
+      .table tr td:first-child {
+        display: block;
+      }
     }
 
     .table thead th,
@@ -48,8 +71,18 @@
     }
 
     .hashtag-wrapper {
-      width: 50%;
       padding: 20px;
+      position: relative;
+      top: 50%;
+      border-top: solid 1px #ccc;
+    }
+
+    @media (min-width: 760px) {
+      .hashtag-wrapper {
+        width: calc(50% - 40px);
+        top: 0;
+        border-top: none;
+      }
     }
 
     .hashtag-wrapper-title {
@@ -94,7 +127,7 @@
 </head>
 <body>
   <?php
-    $hashtags = json_decode(file_get_contents("src/hashtags"));
+    $hashtags = json_decode(file_get_contents(__DIR__ . "/hashtags"));
 
     function custom_math($number) {
       if (strpos($number, 'k') !== false) {
