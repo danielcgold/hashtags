@@ -94,7 +94,7 @@
 </head>
 <body>
   <?php
-    $hashtags = json_decode(file_get_contents("hashtags"));
+    $hashtags = json_decode(file_get_contents("src/hashtags"));
 
     function custom_math($number) {
       if (strpos($number, 'k') !== false) {
@@ -149,7 +149,7 @@
 
     <div class="hashtag-wrapper">
       <h2 class="hashtag-wrapper-title">Selected Hashtags</h2>
-      <p class="no-selection">There aren't any hashtags selected. Select one from the list. <br /><br /> ⬅️</p>
+      <p class="no-selection">There aren't any hashtags selected.</p>
       <textarea class="active-hashtags hidden"></textarea>
       <button data-clipboard-target=".active-hashtags" class="click-to-copy hidden">Click to copy</button>
       <div class="counted-wrapper hidden"><p class="counted"></p> of 30</div>
