@@ -94,7 +94,7 @@
 </head>
 <body>
   <?php
-    $hashtags = json_decode(file_get_contents("src/hashtags"));
+    $hashtags = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/src/hashtags"));
 
     function custom_math($number) {
       if (strpos($number, 'k') !== false) {
