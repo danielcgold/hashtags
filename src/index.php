@@ -79,7 +79,7 @@
 
     @media (min-width: 760px) {
       .hashtag-wrapper {
-        width: calc(50% - 40px);
+        width: calc(50% - 70px);
         top: 0;
         border-top: none;
       }
