@@ -143,8 +143,24 @@
         $number = $number * 1000000000;
       }
 
-      return number_format($number);
+      return $number;
     }
+
+    // Init the new array
+    $hashtags_sorted_and_mathed = array();
+
+    // Create a new array with the numbers converted
+    foreach($hashtags as $h) {
+      $converted_hashtag_count = custom_math($h[1]);
+      array_push($hashtags_sorted_and_mathed, array(
+        $h[0], $converted_hashtag_count
+      ));
+    }
+
+    // Sort the new array by the hashtag index
+    usort($hashtags_sorted_and_mathed, function($a, $b) {
+      return $a[1] - $b[1];
+    });
   ?>
 
   <div class="content-wrapper">
@@ -160,21 +176,20 @@
 
         <tbody>
           <?php
-          for ($row = 0; $row < count($hashtags); $row++) {
-            echo "<tr class='countable table-row'>";
-            echo "<td class='table-td'>$row</td>";
-            for ($col = 0; $col < 2; $col++) {
-              if($col == 0) {
-                echo "<td class='table-hashtag table-td'>#" . $hashtags[$row][$col] . "</td>";
-              } else if($col == 1) {
-                echo "<td class='table-td'>" . custom_math($hashtags[$row][$col]) . "</td>";
-              } else {
-                echo "<td class='table-td'>" . $hashtags[$row][$col] . "</td>";
+            for ($row = 0; $row < count($hashtags_sorted_and_mathed); $row++) {
+              echo "<tr class='countable table-row'>";
+              echo "<td class='table-td'>$row</td>";
+              for ($col = 0; $col < 2; $col++) {
+                if($col == 0) {
+                  echo "<td class='table-hashtag table-td'>#" . $hashtags_sorted_and_mathed[$row][$col] . "</td>";
+                } else if($col == 1) {
+                  echo "<td class='table-td'>" . number_format($hashtags_sorted_and_mathed[$row][$col]) . "</td>";
+                } else {
+                  echo "<td class='table-td'>" . $hashtags_sorted_and_mathed[$row][$col] . "</td>";
+                }
               }
-
+              echo "</tr>";
             }
-            echo "</tr>";
-          }
           ?>
         </tbody>
       </table>
