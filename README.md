@@ -15,6 +15,8 @@ https://baker-lightning-32664.netlify.com/
 ## Getting started
 * Run this on an apache server
 * Hit http://localhost/hashtags.php to compile the hashtags compiled file
+* Run `sh build.sh` to generate the hashtags file into a static HTML file
+* View build/index.html
 
 ## Having trouble?
 * Make sure permissions are set as `777`. It's like you won the lottery! 🎰
